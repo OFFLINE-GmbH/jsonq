@@ -412,6 +412,16 @@ class Jsonq
         usort($this->_map, function ($a, $b) use ($column, $order) {
             $val1 = $this->getFromNested($a, $column);
             $val2 = $this->getFromNested($b, $column);
+
+
+            if ($val1 instanceof ValueNotFound) {
+                $val1 = null;
+            }
+
+            if ($val2 instanceof ValueNotFound) {
+                $val2 = null;
+	    }
+
             if (is_string($val1)) {
                 $val1 = strtolower($val1);
             }
