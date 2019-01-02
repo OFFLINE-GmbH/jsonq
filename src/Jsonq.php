@@ -6,6 +6,7 @@ use Nahid\JsonQ\Exceptions\ConditionNotAllowedException;
 use Nahid\JsonQ\Exceptions\InvalidJsonException;
 use Nahid\JsonQ\Exceptions\InvalidNodeException;
 use Nahid\JsonQ\Exceptions\NullValueException;
+use Nahid\JsonQ\Results\ValueNotFound;
 
 class Jsonq
 {
@@ -420,7 +421,7 @@ class Jsonq
 
             if ($val2 instanceof ValueNotFound) {
                 $val2 = null;
-	    }
+    	    }
 
             if (is_string($val1)) {
                 $val1 = strtolower($val1);
